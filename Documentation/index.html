@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Bitcoin Exchange Script</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Bitcoin2pm Exchange Script&rdquo; Documentation by &ldquo;Gminds&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Bitcoin/Perfect Money Exchange Script&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 10/8/2014<br>
+					By: Gminds<br>
+					Email: <a href="mailto:support@easy2exchange.com">support@easy2exchange.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0"></p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">Download the script</a></li>
+			<li><a href="#cssFiles">Install Script</a></li>
+			<li><a href="#javascript">Configure Script</a></li>
+			<li><a href="#psdFiles">Customise Script</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="htmlStructure"><strong>A) Download the Script</strong> - <a href="#toc">top</a></h3>
+		<p>Download the Bitcoin/Perfect Money script from your CodeCanyon account downloads page and save it to your desktop.</p>
+		
+		<p>Unzip the downloaded script file. You can use a zip program or you can just click twice on the folder icon to show the contents inside. You should see a folder called BitcoinPerfectMoney</p>. 
+				
+	    	
+		
+		<hr>
+
+		<h3 id="cssFiles"><strong>Install the Script</strong> - <a href="#toc">top</a></h3>
+
+		<p>You need the following items when installing this script.</p> 
+			<li>A Perfect money account for receiving payment (USD)</li>
+			<li>Perfect money Alternate Passphrase </li>
+			<li>Mysql database, username and password </li>
+			 <br>
+			
+		<p>Login to your Perfect Money account and copy your USD account it begins with "U" for example U7994859</p>  
+		<p>Copy your Perfect money Alternate phrase hash from your account settings</p>
+		<p>Create Mysql database, username and password on your hosting account. Note the database name, username and password </p> 
+		
+		<p>Open Phpmyadmin, Click on SQL to open the query window and run the queries inside the Sql folder BitcoinPerfectMoney</p>
+		
+		<p>Inside the Bitcoin2pm folder, copy the sql queries inside the order file. Order file is inside the Sql folder, paste its content to the query window inside phpmyadmin and run </p>
+
+        <img src="assets/images/phpmyadmin1.jpg" alt="HTML Structure" />
+
+		
+		<p>Edit the index.php file inside Files folder and change the configure the options from line 1 - 30 .</p>
+		
+		<img src="assets/images/notepade1.jpg" alt="HTML Structure" />
+
+		
+		<hr>
+		
+		<h3 id="javascript"><strong>C) Admin Backend</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Here's a brief information about how to configure this Admin.</p>
+		
+		<img src="assets/images/notepad2.jpg" alt="HTML Structure" />
+		  
+		
+		
+
+<p>You can access at admin backend from
+http://BASE_URL/admin </p>
+
+<p>BASE_URL could be www.domain.com (if you put this script in a main domain), sub.domain.com (if you put this script in a subdomain) or www.domain.com/folder (if you put this script in a subfolder of the main domain).
+</p>
+<p>Original access credentials are:</p>
+
+    Username: demo <br>
+    Password: demo
+
+		
+		<hr>
+		
+		<h3 id="psdFiles"><strong>D) Upload files on your server </strong> - <a href="#toc">top</a></h3>
+		
+		<p> Download and install the FileZilla Client - http://filezilla-project.org/ </p>
+		
+			<ol>
+				<li>Open FileZilla</li>
+				<li>Fill in your FTP Credentials and click on "Quick connect"</li>
+				<li>Use the right side panel to navigate to your script folder</li>
+				<li>Use the left side panel to navigate to the place where you have extracted the script folder</li>
+				<li>Drag the extracted script folder into your web hosting</li>
+				<li>Wait until all files are uploaded</li>
+				<li>The buttons</li>
+			</ol>
+		
+		
+		<p> Note: you may be asked if you want to overwrite files and/or folder. Tick the option to "Always use this action" and click on "Ok". .</p>
+		
+		<hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following files as listed.
+		
+		<ul>
+			<li>SLIM Framework</li>
+			<li>Paris and idiorm</li>
+			<li>Twig</li>
+		</ul>
+		
+		<hr>
+		
+		<p> <b>Donate</b><br>BTC: 16qSDyHgy1D2oD8T9B51XV6jG6oJikY7mc </p> 
+		
+		<p class="append-bottom alt large"><strong>Gminds</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

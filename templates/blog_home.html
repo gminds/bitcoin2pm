@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block page_title %}Easy2excange Perfect Money to Bitcoin{% endblock %}
+
+{% block content %}	
+
+	{% if feeds %}
+	
+	<ul class="header">
+	<li>BTC available: {{ feeds['btc']['amount'] }} </li>
+	<li>Last price: {{ feeds['USD']['last'] }}  {{ feeds['USD']['symbol'] }} </li>
+    </ul>
+	{% else %}	
+		<p>We are offline. Please try later.</p>
+	{% endif %}
+	
+<script async="" type="text/javascript"></script><script>
+var last = {{ feeds['USD']['last']  }} ;
+var amt =  {{ feeds['btc']['amount'] }};
+function recalc(amount) {
+    var btc = amount.value / last,
+	pay = document.getElementById('pay');
+
+    document.getElementById('recv').innerHTML = btc.toFixed(5);
+
+    if (btc >= amt) {
+	pay.style.opacity = 0.2;
+	pay.disabled = true;
+    } else {
+	pay.style.opacity = 1;
+	pay.disabled = false;
+    } 
+}
+</script>
+	
+	 <section>
+
+    <h1>&nbsp; {{ flash['info'] }}</h1>
+    <form action="https://perfectmoney.is/api/step1.asp" method="POST">
+    <input name="PAYEE_ACCOUNT" value={{ feeds['btc']['pm']  }} type="hidden">
+    <input name="PAYEE_NAME" value={{ feeds['btc']['pmname']  }} type="hidden">
+	 <input name="PAYMENT_ID" value={{ feeds['btc']['pmid']  }} type="hidden">
+    <input name="PAYMENT_UNITS" value="USD" type="hidden">
+    <input name="PAYMENT_URL" value={{ feeds['btc']['url']  }}success type="hidden">
+	<input name="PAYMENT_URL_METHOD" value="GET" type="hidden">
+	<input name="STATUS_URL" value={{ feeds['btc']['url']  }}status type="hidden">
+	<input name="NOPAYMENT_URL" value={{ feeds['btc']['url']  }}failed type="hidden">
+	<input name="NOPAYMENT_URL_METHOD" value="GET" type="hidden">
+	<input name="rate" value={{ feeds['USD']['last']  }} type="hidden">
+	<input name="last" value={{ feeds['btc']['amount']  }} type="hidden">
+	<input name="BAGGAGE_FIELDS" value="BTC_ADDR rate last email" type="hidden">
+    <ul>
+	<li style="width:150px">Email:</li>
+	<li><input name="email" placeholder="" size="25" pattern="[^ @]*@[^ @]*" value="" required="" autofocus=""></li><br>
+	<li style="width:150px">Bitcoin wallet:</li>
+	<li><input name="BTC_ADDR" placeholder="" size="50" pattern="^1[0-9a-zA-Z]{26,33}" required="" autofocus=""></li>
+	
+    </ul>
+    <ul>
+	<li style="width:150px">Amount:</li>
+	<li style="width:300px"><input name="PAYMENT_AMOUNT" placeholder={{ feeds['btc']['pmminimum']  }} size="3" pattern="^[0-9.]+$" onkeyup="recalc(this);" required=""> USD {{ feeds['btc']['pmminimum']  }}</li>
+	<li style="color:#999999">Will receive <span id="recv">0</span> BTC</li>
+    </ul>
+    <ul>
+	<li><button id="pay">PAY With Perfect Money</button></li>
+	<p></p>
+    </ul>
+    </form>
+		<p></p>
+    </section>
+    	<li></li>
+
+	
+{% endblock %}

@@ -1,0 +1,13 @@
+Dear customers,
+thank you for purchasing our item.
+
+The current version of Bitcoin2pm is: 1.0
+
+DOCUMENTATION
+-------------
+
+In case of any problems related to this script, please refer to "index.html" file in "Documentation" folder. 
+All item's features and options are described in documentation, we highly recommend reading it first.
+
+
+Support through CodeCanyon profile: http://codecanyon.net/user/gminds
