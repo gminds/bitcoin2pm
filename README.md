@@ -84,4 +84,4 @@ I've used the following files as listed.
 **Note**
 This PM/bitcoin exchange script is semi-automated and you have to manually process orders.
 
-Get Fully automated Premium version of Perfectmoney/bitcoin exchange script at http://www.easy2exchange.com
+Get Fully automated Premium version of Perfectmoney/bitcoin exchange script at http://easy2exchange.com
